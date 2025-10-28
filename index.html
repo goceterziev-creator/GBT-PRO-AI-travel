@@ -3,670 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎪 GBT PRO AI Travel - 2L1P Магия</title>
-    <style>
-        :root { --heartbeat-duration: 15s; --magic-sparkle: #ff0080; }
-        
-        @keyframes heartPulse {
-            0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-            50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
-            100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: heartPulse var(--heartbeat-duration) ease infinite;
-            min-height: 100vh; color: white; overflow-x: hidden;
-        }
-        
-        .app { min-height: 100vh; position: relative; }
-        
-        .visual-monastery {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
-        }
-        
-        .magic-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        
-        .emotional-glow {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-            animation: glowMove 10s ease-in-out infinite;
-        }
-        
-        @keyframes glowMove {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-10%, 10%) scale(1.1); }
-        }
-        
-        .mood-calm {
-            background: linear-gradient(135deg, #23a6d5 0%, #23d5ab 100%);
-            animation: gentleBreath 8s ease-in-out infinite;
-        }
-        
-        @keyframes gentleBreath {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
-        
-        .personality-selector {
-            max-width: 1200px; margin: 0 auto; padding: 2rem; text-align: center;
-        }
-        
-        .selector-title {
-            font-size: 3rem; margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ff6b35, #e73c7e, #23a6d5);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        
-        .selector-subtitle { font-size: 1.5rem; margin-bottom: 3rem; color: rgba(255, 255, 255, 0.8); }
-        
-        .personality-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem; margin-bottom: 3rem;
-        }
-        
-        .persona-card {
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
-            border: 2px solid transparent; border-radius: 20px; padding: 2rem;
-            cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;
-        }
-        
-        .persona-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: var(--persona-color); transform: scaleX(0); transition: transform 0.3s ease;
-        }
-        
-        .persona-card:hover::before { transform: scaleX(1); }
-        .persona-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.15); }
-        .persona-card.selected { border-color: var(--persona-color); background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
-        .persona-card.selected::before { transform: scaleX(1); }
-        
-        .persona-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .persona-name { font-size: 1.5rem; margin-bottom: 1rem; color: white; }
-        .persona-description { color: rgba(255, 255, 255, 0.8); line-height: 1.6; }
-        
-        .confirm-button {
-            background: linear-gradient(135deg, #ff6b35, #e73c7e); border: none;
-            border-radius: 50px; padding: 1rem 3rem; font-size: 1.2rem; color: white;
-            cursor: pointer; transition: all 0.3s ease; opacity: 1;
-        }
-        
-        .confirm-button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .confirm-button:not(:disabled):hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4); }
-        
-        .hidden { display: none !important; }
-        
-        .trip-planner { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        .planner-header { text-align: center; margin-bottom: 2rem; }
-        
-        .planner-header h1 {
-            font-size: 2.5rem; margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ff6b35, #e73c7e);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        
-        .planner-controls {
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
-            border-radius: 20px; padding: 2rem; margin-bottom: 2rem;
-        }
-        
-        .input-group { margin-bottom: 1.5rem; }
-        .input-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-        
-        .input-group input, .input-group select {
-            width: 100%; padding: 1rem; border: none; border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9); font-size: 1rem;
-        }
-        
-        .plan-button {
-            width: 100%; background: linear-gradient(135deg, #23a6d5, #23d5ab);
-            border: none; border-radius: 15px; padding: 1.2rem; font-size: 1.3rem;
-            color: white; cursor: pointer; transition: all 0.3s ease;
-        }
-        
-        .plan-button:disabled { opacity: 0.7; }
-        .plan-button:not(:disabled):hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(35, 166, 213, 0.4); }
-        
-        .trip-result {
-            background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 2rem;
-            margin-top: 2rem; color: #2c3e50; animation: resultAppear 0.8s ease;
-        }
-        
-        @keyframes resultAppear {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .day-plan {
-            background: #f8f9fa; padding: 1rem; margin: 0.5rem 0; border-radius: 10px; border-left: 4px solid #23a6d5;
-        }
-        
-        .magic-moment {
-            background: #fff3cd; border: 2px solid #ffeaa7; border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem;
-        }
-        
-        .emotional-companion {
-            position: fixed; bottom: 20px; right: 20px; width: 400px;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            z-index: 1000; max-height: 600px; display: flex; flex-direction: column;
-        }
-        
-        .companion-header {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
-        }
-        
-        .companion-header h3 { margin: 0; color: #2c3e50; }
-        
-        .mood-indicator {
-            display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;
-        }
-        
-        .mood-badge {
-            padding: 0.2rem 0.8rem; border-radius: 20px; color: white; font-size: 0.8rem; text-transform: capitalize;
-        }
-        
-        .chat-messages {
-            flex: 1; overflow-y: auto; margin-bottom: 1rem; max-height: 300px;
-        }
-        
-        .message { margin-bottom: 1rem; animation: messageAppear 0.3s ease; }
-        
-        @keyframes messageAppear {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .message.ai .message-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 0.8rem 1rem; border-radius: 18px 18px 18px 4px; max-width: 80%;
-        }
-        
-        .message.user .message-content {
-            background: #f1f3f4; color: #2c3e50; padding: 0.8rem 1rem;
-            border-radius: 18px 18px 4px 18px; margin-left: auto; max-width: 80%;
-        }
-        
-        .message-time {
-            font-size: 0.7rem; color: #7f8c8d; margin-top: 0.2rem;
-        }
-        
-        .suggestions { margin-bottom: 1rem; }
-        .suggestions h4 { margin: 0 0 0.8rem 0; color: #2c3e50; font-size: 0.9rem; }
-        
-        .suggestion-buttons {
-            display: flex; flex-wrap: wrap; gap: 0.5rem;
-        }
-        
-        .suggestion-btn {
-            background: transparent; border: 2px solid; border-radius: 15px;
-            padding: 0.4rem 0.8rem; font-size: 0.8rem; cursor: pointer;
-            transition: all 0.3s ease; text-transform: capitalize;
-        }
-        
-        .suggestion-btn:hover {
-            background: rgba(0, 0, 0, 0.05); transform: translateY(-2px);
-        }
-        
-        .quick-responses {
-            display: flex; gap: 0.5rem; justify-content: space-between;
-        }
-        
-        .quick-responses button {
-            flex: 1; padding: 0.6rem; border: none; border-radius: 10px;
-            background: #ecf0f1; cursor: pointer; transition: all 0.3s ease; font-size: 0.8rem;
-        }
-        
-        .quick-responses button:hover {
-            background: #bdc3c7; transform: scale(1.05);
-        }
-        
-        .spinner {
-            display: inline-block; width: 20px; height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%;
-            border-top-color: white; animation: spin 1s ease-in-out infinite; margin-right: 10px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+    <title>GBT PRO AI Travel - Интелигентни пътувания</title>
+    <meta name="description" content="AI-базирана платформа за персонализирани пътувания. Откривай, планирай и резервирай с изкуствен интелект.">
+    <meta name="keywords" content="пътувания, AI, изкуствен интелект, ваканции, хотели, полети">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="app" id="app">
-        <div class="visual-monastery" id="visualMonastery">
-            <canvas class="magic-canvas" id="magicCanvas"></canvas>
-            <div class="emotional-glow"></div>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌍 GBT PRO AI Travel</div>
+            <ul class="nav-links">
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#features">Възможности</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакт</a></li>
+            </ul>
         </div>
-        
-        <div class="main-content">
-            <div class="personality-selector" id="personalitySelector">
-                <h1 class="selector-title">🎪 Добре дошли в GBT PRO AI Travel!</h1>
-                <p class="selector-subtitle">Избери своята пътническа личност:</p>
-                
-                <div class="personality-grid" id="personalityGrid"></div>
+    </nav>
 
-                <button class="confirm-button" id="confirmButton" disabled>
-                    Избери личност
-                </button>
-            </div>
-            
-            <div class="trip-planner hidden" id="tripPlanner">
-                <div class="planner-header">
-                    <h1>🎯 Neural Планировчик</h1>
-                    <p id="welcomeMessage">Здравей! Ще създам перфектното пътуване за теб!</p>
-                </div>
-
-                <div class="planner-controls">
-                    <div class="input-group">
-                        <label>📍 Дестинация</label>
-                        <input type="text" id="destinationInput" placeholder="Къде искаш да пътуваш?">
-                    </div>
-
-                    <div class="input-group">
-                        <label>📅 Продължителност: <span id="durationValue">3</span> дни</label>
-                        <input type="range" id="durationSlider" min="1" max="14" value="3">
-                    </div>
-
-                    <div class="input-group">
-                        <label>💰 Бюджет</label>
-                        <select id="budgetSelect">
-                            <option value="low">Икономичен</option>
-                            <option value="medium" selected>Среден</option>
-                            <option value="high">Висок</option>
-                            <option value="luxury">Лукс</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button class="plan-button" id="planButton">
-                    🎪 Създай магическо пътуване!
-                </button>
-
-                <div class="trip-result hidden" id="tripResult"></div>
+    <!-- Херо секция -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Открийте света с AI</h1>
+            <p>Персонализирани пътувания, интелигентни препоръки, незабравими преживявания</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn">Започнете сега</a>
+                <a href="#about" class="btn btn-secondary">Научете повече</a>
             </div>
         </div>
-        
-        <div class="emotional-companion hidden" id="emotionalCompanion">
-            <div class="companion-header">
-                <h3>💞 Емоционален Спътник</h3>
-                <div class="mood-indicator">
-                    Настроение: <span class="mood-badge" id="moodBadge">неутрално</span>
-                </div>
+    </section>
+
+    <!-- Features секция -->
+    <section class="section section-white" id="features">
+        <h2>Нашите Възможности</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Планиране</h3>
+                <p>Интелигентно планиране на пътувания базирано на вашите предпочитания и бюджет</p>
             </div>
-
-            <div class="chat-messages" id="chatMessages"></div>
-
-            <div class="suggestions">
-                <h4>🎯 Предложения за теб:</h4>
-                <div class="suggestion-buttons" id="suggestionButtons"></div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Мгновени оферти</h3>
+                <p>Най-добрите цени за полети, хотели и дейности в реално време</p>
             </div>
-
-            <div class="quick-responses">
-                <button onclick="handleQuickResponse('Харесва ми!')">👍 Харесва ми</button>
-                <button onclick="handleQuickResponse('Не ми харесва')">👎 Не ми харесва</button>
-                <button onclick="handleQuickResponse('Изненадай ме!')">🎁 Изненадай ме</button>
+            <div class="feature-card">
+                <div class="feature-icon">🌎</div>
+                <h3>Глобално покритие</h3>
+                <p>Дестинации по целия свят с локални препоръки и съвети</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Сигурност</h3>
+                <p>Напълно защитена платформа с гарантирана поверителност на данните</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Мобилна приложба</h3>
+                <p>Пътувайте с увереност с нашето мобилно приложение</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>24/7 Поддръжка</h3>
+                <p>Винаги на разположение да ви помогнем по време на пътуването</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        const personalities = [
-            { id: 'adventurer', name: '🧗 Авантюрист', description: 'Търся екстремни преживявания и приключения в природата!', color: '#ff6b35' },
-            { id: 'luxury', name: '💎 Лукозен', description: 'Обичам комфорта, изисканата кухня и VIP отношения.', color: '#d4af37' },
-            { id: 'cultural', name: '🎨 Културен изследовател', description: 'Историята, изкуството и традициите ме вълнуват.', color: '#2a9d8f' },
-            { id: 'spiritual', name: '🧘 Духовен търсач', description: 'Търся вътшен покой, медитация и духовно пробуждане.', color: '#9b59b6' },
-            { id: 'family', name: '👨‍👩‍👧‍👦 Семеен', description: 'Важни са ми удобството и забавленията за цялото семейство.', color: '#3498db' },
-            { id: 'digital_nomad', name: '💻 Дигитален номад', description: 'Търся места с добра интернет връзка и работна атмосфера.', color: '#e74c3c' }
-        ];
+    <!-- About секция -->
+    <section class="section" id="about">
+        <h2>За GBT PRO AI Travel</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Нашата Мисия</h3>
+                <p>Да направим пътуването по-достъпно, персонализирано и вълнуващо чрез технологиите на изкуствения интелект.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Защо да изберете нас?</h3>
+                <p>Комбинираме AI технологии с човешки опит за незабравими пътувания.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Технологии</h3>
+                <p>Използваме най-модерните AI алгоритми за перфектно планиране.</p>
+            </div>
+        </div>
+    </section>
 
-        const tripPlans = {
-            adventurer: {
-                name: "🏔️ Екстремно приключение в Пирин",
-                description: "Планински преходи, спелеология и адреналинови преживявания",
-                itinerary: [
-                    "Ден 1: Пристигане в Банско - Запознаване с планински водач",
-                    "Ден 2: Преход към Вихрен - Нощувка в хижа", 
-                    "Ден 3: Спускане и посещение в местна механа"
-                ],
-                magic: "🎪 Среща с местен планински водач, който ще разкаже легенди за планината"
-            },
-            luxury: {
-                name: "💎 Лукозен уикенд в Банско", 
-                description: "5-звезден хотел, СПА процедури и гурман ресторанти",
-                itinerary: [
-                    "Ден 1: Пристигане и настаняване в луксозен хотел",
-                    "Ден 2: СПА ден и гурман вечеря",
-                    "Ден 3: Частна екскурзия до Мелник с дегустация на вино"
-                ],
-                magic: "🍷 Частна дегустация на вино в един от най-старите винарски изби в България"
-            },
-            cultural: {
-                name: "🏛️ Културно пътешествие из България",
-                description: "Исторически забележителности и традиции",
-                itinerary: [
-                    "Ден 1: Пловдив - Старият град и Римски театър",
-                    "Ден 2: Велико Търново - Царевец и Света гора",
-                    "Ден 3: Несебър - Старият град и черноморска архитектура"
-                ],
-                magic: "📜 Среща с местен историк, който ще разкаже тайни истории за местата"
-            }
-        };
+    <!-- Contact секция -->
+    <section class="section section-white" id="contact">
+        <h2>Свържете се с нас</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📧 Имейл</h3>
+                <p>info@gbtprotravel.com</p>
+            </div>
+            <div class="feature-card">
+                <h3>📞 Телефон</h3>
+                <p>+359 888 123 456</p>
+            </div>
+            <div class="feature-card">
+                <h3>📍 Адрес</h3>
+                <p>София, България</p>
+            </div>
+        </div>
+    </section>
 
-        const emotionalSupport = {
-            stressed: {
-                message: "😌 Виждам, че си малко стресиран. Искаш ли да ти предложа спокойно пътуване в природата?",
-                suggestions: ["ретрит в планината", "СПА уикенд", "медитативно пътуване"],
-                color: "#4ecdc4"
-            },
-            excited: {
-                message: "🎉 Уау! Енергията ти е заразяваща! Искаш ли приключение пълно с адреналин?",
-                suggestions: ["екстремни спортове", "урбано изследване", "нощни приключения"],
-                color: "#ff6b35"
-            },
-            curious: {
-                message: "🔍 Чувствам твоята любопитност! Да открием заедно нещо изненадващо?",
-                suggestions: ["скрити бижута", "местни тайни", "непознати маршрути"],
-                color: "#23a6d5"
-            },
-            tired: {
-                message: "😴 Изглеждаш уморен. Искаш ли релаксиращо пътуване с минимално планиране?",
-                suggestions: ["ал инклузив", "релакс спа", "само природа"],
-                color: "#9b59b6"
-            }
-        };
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 GBT PRO AI Travel. Всички права запазени.</p>
+        <p>Интелигентни решения за интелигентни пътници</p>
+    </footer>
 
-        let currentUser = null;
-        let selectedPersona = null;
-        let currentMood = 'neutral';
-
-        function initializeSystem() {
-            renderPersonalitySelector();
-            setupEventListeners();
-            startVisualEffects();
-            console.log("🎪 GBT PRO AI Travel инициализирана успешно!");
-        }
-
-        function renderPersonalitySelector() {
-            const grid = document.getElementById('personalityGrid');
-            grid.innerHTML = '';
-            
-            personalities.forEach(persona => {
-                const card = document.createElement('div');
-                card.className = 'persona-card';
-                card.style.setProperty('--persona-color', persona.color);
-                card.innerHTML = `
-                    <div class="persona-icon">${persona.name.split(' ')[0]}</div>
-                    <h3 class="persona-name">${persona.name}</h3>
-                    <p class="persona-description">${persona.description}</p>
-                `;
-                
-                card.addEventListener('click', () => selectPersona(persona.id));
-                grid.appendChild(card);
-            });
-        }
-
-        function selectPersona(personaId) {
-            selectedPersona = personaId;
-            
-            document.querySelectorAll('.persona-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            
-            document.querySelectorAll('.persona-card').forEach((card, index) => {
-                if (personalities[index].id === personaId) {
-                    card.classList.add('selected');
-                }
-            });
-            
-            document.getElementById('confirmButton').disabled = false;
-            document.getElementById('confirmButton').textContent = '🎯 Започни приключението!';
-        }
-
-        function confirmPersonaSelection() {
-            if (!selectedPersona) return;
-            
-            currentUser = {
-                id: Date.now().toString(),
-                persona: selectedPersona,
-                joinDate: new Date().toISOString()
-            };
-            
-            document.getElementById('visualMonastery').className = 'visual-monastery mood-joy';
-            document.getElementById('personalitySelector').classList.add('hidden');
-            document.getElementById('tripPlanner').classList.remove('hidden');
-            document.getElementById('emotionalCompanion').classList.remove('hidden');
-            
-            const personaName = personalities.find(p => p.id === selectedPersona).name;
-            document.getElementById('welcomeMessage').textContent = 
-                `Здравей, ${personaName}! Ще създам перфектното пътуване за теб!`;
-            
-            startEmotionalCompanion();
-            
-            console.log(`🎭 Потребителска личност избрана: ${selectedPersona}`);
-        }
-
-        function generateTripPlan() {
-            const planButton = document.getElementById('planButton');
-            const destination = document.getElementById('destinationInput').value || 'България';
-            
-            planButton.innerHTML = '<div class="spinner"></div> 🧠 AI планира...';
-            planButton.disabled = true;
-            
-            setTimeout(() => {
-                const plan = tripPlans[currentUser.persona] || tripPlans.adventurer;
-                
-                const resultHTML = `
-                    <h2>${plan.name}</h2>
-                    <p>${plan.description}</p>
-                    
-                    <div class="itinerary">
-                        <h3>🗓️ Програма:</h3>
-                        ${plan.itinerary.map(day => `<div class="day-plan">${day}</div>`).join('')}
-                    </div>
-                    
-                    <div class="magic-moment">
-                        <h3>✨ Магически момент:</h3>
-                        <p>${plan.magic}</p>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <button onclick="showCreativeGenerator()" style="background: linear-gradient(135deg, #ff6b35, #e73c7e); border: none; border-radius: 10px; padding: 1rem 2rem; color: white; cursor: pointer; font-size: 1.1rem;">
-                            🎪 Създай още приключения!
-                        </button>
-                    </div>
-                `;
-                
-                document.getElementById('tripResult').innerHTML = resultHTML;
-                document.getElementById('tripResult').classList.remove('hidden');
-                
-                planButton.innerHTML = '🎪 Създай магическо пътуване!';
-                planButton.disabled = false;
-                
-                addChatMessage('ai', '🎉 Чудесно! Създадох перфектен план за теб! Какво мислиш?');
-                
-            }, 3000);
-        }
-
-        function startEmotionalCompanion() {
-            addChatMessage('ai', '💖 Здравей! Аз съм твоят емоционален спътник. Готов съм да ти помогна да създадеш незабравимо пътуване!');
-            
-            setTimeout(() => {
-                analyzeUserMood();
-            }, 2000);
-        }
-
-        function analyzeUserMood() {
-            const moods = ['stressed', 'excited', 'curious', 'tired'];
-            const randomMood = moods[Math.floor(Math.random() * moods.length)];
-            currentMood = randomMood;
-            
-            const support = emotionalSupport[randomMood];
-            document.getElementById('moodBadge').textContent = randomMood;
-            document.getElementById('moodBadge').style.backgroundColor = support.color;
-            
-            const suggestionButtons = document.getElementById('suggestionButtons');
-            suggestionButtons.innerHTML = '';
-            
-            support.suggestions.forEach(suggestion => {
-                const button = document.createElement('button');
-                button.className = 'suggestion-btn';
-                button.style.borderColor = support.color;
-                button.textContent = suggestion;
-                button.onclick = () => handleSuggestion(suggestion);
-                suggestionButtons.appendChild(button);
-            });
-            
-            addChatMessage('ai', support.message);
-        }
-
-        function addChatMessage(type, text) {
-            const chatMessages = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}`;
-            
-            const timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            
-            messageDiv.innerHTML = `
-                <div class="message-content">${text}</div>
-                <div class="message-time">${timestamp}</div>
-            `;
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function handleSuggestion(suggestion) {
-            addChatMessage('user', `Искам да разгледам: ${suggestion}`);
-            
-            setTimeout(() => {
-                const responses = [
-                    "🎪 Страхотен избор! Вече търся перфектни места за това.",
-                    "💫 Чудесно! Това е едно от най-вълнуващите неща, които можем да направим.",
-                    "🔍 Отлично! Да започнем да планираме това приключение."
-                ];
-                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                addChatMessage('ai', randomResponse);
-            }, 1000);
-        }
-
-        function handleQuickResponse(response) {
-            addChatMessage('user', response);
-            
-            setTimeout(() => {
-                let aiResponse;
-                if (response.includes('Харесва')) {
-                    aiResponse = "🎉 Супер! Много се радвам, че ти харесва! Да продължим ли с планирането?";
-                } else if (response.includes('Не ми харесва')) {
-                    aiResponse = "😊 Разбирам, не е за теб. Какво друго би те заинтересувало?";
-                } else {
-                    aiResponse = "🎁 Ооо, обичам изненади! Ще създам нещо наистина магическо за теб!";
-                }
-                addChatMessage('ai', aiResponse);
-            }, 1000);
-        }
-
-        function startVisualEffects() {
-            const canvas = document.getElementById('magicCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            
-            const particles = [];
-            const particleCount = 50;
-            
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-                
-                reset() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 3 + 1;
-                    this.speedX = Math.random() * 2 - 1;
-                    this.speedY = Math.random() * 2 - 1;
-                    this.color = this.getRandomColor();
-                    this.alpha = Math.random() * 0.5 + 0.2;
-                }
-                
-                getRandomColor() {
-                    const colors = ['#23a6d5', '#23d5ab', '#ff6b35', '#e73c7e', '#ff0080'];
-                    return colors[Math.floor(Math.random() * colors.length)];
-                }
-                
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    
-                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-                    
-                    this.alpha -= 0.005;
-                    if (this.alpha <= 0) {
-                        this.reset();
-                    }
-                }
-                
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = this.alpha;
-                    ctx.fillStyle = this.color;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
-            
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-            
-            function animate() {
-                ctx.fillStyle = 'rgba(10, 10, 20, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-
-        function setupEventListeners() {
-            document.getElementById('confirmButton').addEventListener('click', confirmPersonaSelection);
-            document.getElementById('planButton').addEventListener('click', generateTripPlan);
-            
-            document.getElementById('durationSlider').addEventListener('input', function() {
-                document.getElementById('durationValue').textContent = this.value;
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeSystem);
-
-        function showCreativeGenerator() {
-            alert('🎪 Creative Generator ще бъде добавен в следващата версия!');
-        }
-
-        window.handleQuickResponse = handleQuickResponse;
-        window.showCreativeGenerator = showCreativeGenerator;
-
-        console.log("🚀 GBT PRO AI Travel системата е заредена и готова!");
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
