@@ -16,7 +16,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Начало</a></li>
                 <li><a href="#features">Възможности</a></li>
-                <li><a href="#about">За нас</a></li>
+                <li><a href="#destinations">Дестинации</a></li>
+                <li><a href="#testimonials">Отзиви</a></li>
+                <li><a href="#pricing">Цени</a></li>
                 <li><a href="#contact">Контакт</a></li>
             </ul>
         </div>
@@ -28,11 +30,31 @@
             <h1>Открийте света с AI</h1>
             <p>Персонализирани пътувания, интелигентни препоръки, незабравими преживявания</p>
             <div class="cta-buttons">
-                <a href="#features" class="btn">Започнете сега</a>
-                <a href="#about" class="btn btn-secondary">Научете повече</a>
+                <a href="#contact-form" class="btn">Започнете сега</a>
+                <a href="#features" class="btn btn-secondary">Научете повече</a>
             </div>
         </div>
     </section>
+
+    <!-- AI Chat Bot -->
+    <div class="ai-chat-widget">
+        <div class="chat-toggle">🤖</div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h4>AI Travel Assistant</h4>
+                <span class="close-chat">×</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai-message">
+                    Здравейте! 👋 Аз съм вашият AI асистент за пътувания. Мога да ви помогна с планиране на ваканция, препоръки за дестинации или всякакви въпроси за пътуване!
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Попитайте ме за пътуване...">
+                <button id="sendMessage">▶</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Features секция -->
     <section class="section section-white" id="features">
@@ -71,48 +93,211 @@
         </div>
     </section>
 
-    <!-- About секция -->
-    <section class="section" id="about">
-        <h2>За GBT PRO AI Travel</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Нашата Мисия</h3>
-                <p>Да направим пътуването по-достъпно, персонализирано и вълнуващо чрез технологиите на изкуствения интелект.</p>
+    <!-- Destinations Gallery -->
+    <section class="section" id="destinations">
+        <h2>Популярни Дестинации</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=400" alt="Париж">
+                <div class="destination-info">
+                    <h3>Париж, Франция</h3>
+                    <p>Градът на любовта и светлината</p>
+                    <span class="price">от €450</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Защо да изберете нас?</h3>
-                <p>Комбинираме AI технологии с човешки опит за незабравими пътувания.</p>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400" alt="Тайланд">
+                <div class="destination-info">
+                    <h3>Пукет, Тайланд</h3>
+                    <p>Тропически рай с бистри води</p>
+                    <span class="price">от €680</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Технологии</h3>
-                <p>Използваме най-модерните AI алгоритми за перфектно планиране.</p>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400" alt="Токио">
+                <div class="destination-info">
+                    <h3>Токио, Япония</h3>
+                    <p>Съвременна технология и древна култура</p>
+                    <span class="price">от €720</span>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400" alt="Малдиви">
+                <div class="destination-info">
+                    <h3>Малдиви</h3>
+                    <p>Рай за нуркачи и меден месец</p>
+                    <span class="price">от €890</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact секция -->
-    <section class="section section-white" id="contact">
+    <!-- Testimonials Section -->
+    <section class="section section-white" id="testimonials">
+        <h2>Отзиви от клиенти</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p>"AI планирането спести часове изследване. Всичко беше перфектно организирано!"</p>
+                <div class="client-info">
+                    <strong>Мария И.</strong>
+                    <span>Испания ваканция</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p>"Препоръките за ресторанти бха точно това, което търсех. Незабравимо преживяване!"</p>
+                <div class="client-info">
+                    <strong>Иван П.</strong>
+                    <span>Тайланд приключение</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★☆</div>
+                <p>"Бърза и точна помощ при промяна на полет. Професионално обслужване."</p>
+                <div class="client-info">
+                    <strong>Елена К.</strong>
+                    <span>Италия културен тур</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <h2>Цени и Пакети</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Базов</h3>
+                <div class="price">€29<span>/месец</span></div>
+                <ul>
+                    <li>✓ AI планиране на пътувания</li>
+                    <li>✓ Основни препоръки</li>
+                    <li>✓ До 3 дестинации</li>
+                    <li>✓ Имейл поддръжка</li>
+                </ul>
+                <button class="btn btn-pricing">Избери</button>
+            </div>
+            <div class="pricing-card featured">
+                <div class="popular">Най-популярен</div>
+                <h3>Професионален</h3>
+                <div class="price">€59<span>/месец</span></div>
+                <ul>
+                    <li>✓ Всичко от Базов</li>
+                    <li>✓ Персонализирани маршрути</li>
+                    <li>✓ Неограничени дестинации</li>
+                    <li>✓ Приоритетна поддръжка</li>
+                    <li>✓ Мобилно приложение</li>
+                </ul>
+                <button class="btn btn-pricing">Избери</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Бизнес</h3>
+                <div class="price">€99<span>/месец</span></div>
+                <ul>
+                    <li>✓ Всичко от Професионален</li>
+                    <li>✓ Групови пътувания</li>
+                    <li>✓ VIP услуги</li>
+                    <li>✓ 24/7 експресна поддръжка</li>
+                    <li>✓ Анализи и отчети</li>
+                </ul>
+                <button class="btn btn-pricing">Избери</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section section-white" id="contact-form">
         <h2>Свържете се с нас</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>📧 Имейл</h3>
-                <p>info@gbtprotravel.com</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Нека започнем вашето приключение</h3>
+                <p>Разкажете ни за вашите мечти за пътуване и нашият AI ще ви подготви персонализиран план!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Имейл</strong>
+                            <p>info@gbtprotravel.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Телефон</strong>
+                            <p>+359 888 123 456</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Адрес</strong>
+                            <p>София, България</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>📞 Телефон</h3>
-                <p>+359 888 123 456</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Вашето име" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Вашият имейл" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="destination" placeholder="Желана дестинация">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Разкажете ни за вашето мечтано пътуване..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Изпрати запитване</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <h2>Често Задавани Въпроси</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Как работи AI планирането?</div>
+                <div class="faq-answer">Нашият AI анализира вашите предпочитания, бюджет и интереси, след което генерира персонализиран маршрут с най-добрите оферти.</div>
             </div>
-            <div class="feature-card">
-                <h3>📍 Адрес</h3>
-                <p>София, България</p>
+            <div class="faq-item">
+                <div class="faq-question">Колко време отнема да получа план?</div>
+                <div class="faq-answer">Обикновено в рамките на 2-4 часа, в зависимост от сложността на пътуването.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Мога ли да променя плана?</div>
+                <div class="faq-answer">Да, можете да правите неограничени промени преди финално потвърждение.</div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 GBT PRO AI Travel. Всички права запазени.</p>
-        <p>Интелигентни решения за интелигентни пътници</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>GBT PRO AI Travel</h4>
+                <p>Интелигентни решения за интелигентни пътници</p>
+            </div>
+            <div class="footer-section">
+                <h4>Връзки</h4>
+                <a href="#home">Начало</a>
+                <a href="#features">Услуги</a>
+                <a href="#destinations">Дестинации</a>
+            </div>
+            <div class="footer-section">
+                <h4>Поддръжка</h4>
+                <a href="#contact">Контакт</a>
+                <a href="#faq">ЧЗВ</a>
+                <a href="#pricing">Цени</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GBT PRO AI Travel. Всички права запазени.</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
